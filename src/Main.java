@@ -44,7 +44,7 @@ public class Main {
 
     static int getSameWeightDiffHeightCount(List<Person> list) {
 
-        list.sort(Comparator.comparing(Person::getWeight)); // O(n)
+        list.sort(Comparator.comparing(Person::getWeight)); // O(n*log(n))
 
         int maxCount = 0;
         int curCount = 0;
