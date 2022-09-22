@@ -1,7 +1,6 @@
 import collections.map.MyHashMap;
 import collections.map.MyMap;
 import model.Person;
-import sorters.QuickSorter;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -14,13 +13,13 @@ public class Main {
         List<Person> personList = initPersonList();
         System.out.println("Person list: " + personList);
 
-        QuickSorter.sort(personList, Comparator.comparing(Person::getHeight));
+        personList.sort(Comparator.comparing(Person::getHeight));
         System.out.println("Person list sorted by height: " + personList);
 
-        QuickSorter.sort(personList, Comparator.comparing(Person::getWeight));
+        personList.sort(Comparator.comparing(Person::getWeight));
         System.out.println("Person list sorted by weight: " + personList);
 
-        QuickSorter.sort(personList, Comparator.comparing(Person::getAge));
+        personList.sort(Comparator.comparing(Person::getAge));
         System.out.println("Person list sorted by    age: " + personList);
 
         System.out.println("Max count of persons with same weight and different height: " +
@@ -45,7 +44,7 @@ public class Main {
 
     static int getSameWeightDiffHeightCount(List<Person> list) {
 
-        QuickSorter.sort(list, Comparator.comparing(Person::getWeight));
+        list.sort(Comparator.comparing(Person::getWeight)); // O(n)
 
         int maxCount = 0;
         int curCount = 0;
